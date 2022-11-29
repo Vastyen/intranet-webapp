@@ -1,10 +1,11 @@
 <template>
 
-  <div class="top">
-    <Logo class="logo"></Logo>
-    <Login class="login"></Login>
+  <div id="login">
+      <div id="left">
+    <Logo></Logo></div>
+    <div id="right">
+    <Login></Login></div>
   </div>
-
 </template>
 
 <script>
@@ -14,26 +15,36 @@ export default {
 </script>
 
 <style>
-
 *{
-    background-color: #213564;
+  
     color: white;
+    font-family: "JetBrains Mono", monospace;
+    background-color: #213564;
   }
 
 
 
-
-.logo{
-  
-  position: relative;
-  margin-top: 18%;
-  margin-left: 20%;
-}
-
-.login {
+#login{
+  display: flex;
+  margin: 0 auto;
+  margin-inline: 10%;
+  width: 80%;
+  justify-content: center;
   position: absolute;
-  margin-left: 55%;
+  top: 30%;
+
 }
 
+#right{
+  margin-inline: 10%;
+ 
 
+
+}
+
+#left{
+  margin-inline: 10%;
+  margin-top: 2%;
+  
+}
 </style>
