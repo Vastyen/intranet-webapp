@@ -6,15 +6,11 @@
             <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
             <label for="name" class="form__label">Correo Electrónico</label>
         </div>
-
-
         <div class="form__group field">
             <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
             <label for="name" class="form__label">Contraseña</label>
         </div>
-
-
-        <button class="button-30" role="button">Ingresar</button>
+        <button class="button-30" role="button" @click="ingresar">Ingresar</button>
     </form>
     </div>
   
@@ -22,12 +18,16 @@
 
 <script>
 
+export default{
+    methods: {
+        ingresar() {
+            this.$router.push('/upload');
+        }
+    },
 
-
+}
 
 </script>
-
-
 
 <style>
 form{

@@ -17,9 +17,9 @@ public class Attachment {
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
-
     private String fileName;
     private String fileType;
+
 
     @Lob
     private byte[] data;
@@ -28,5 +28,6 @@ public class Attachment {
         this.fileName = fileName;
         this.fileType = fileType;
         this.data = data;
+
     }
 }

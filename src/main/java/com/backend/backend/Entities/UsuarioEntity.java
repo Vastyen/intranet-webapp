@@ -9,7 +9,7 @@ public class UsuarioEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column (unique = true, nullable = false)
     Integer id;
-    String correo;
+    String email;
     String password;
     String rango;
 }
