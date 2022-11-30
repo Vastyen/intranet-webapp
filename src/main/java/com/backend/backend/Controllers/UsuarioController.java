@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 @Controller
 @RequestMapping("/usuarios")
+@CrossOrigin("*")
 public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
