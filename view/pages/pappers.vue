@@ -31,8 +31,10 @@ export default {
                 .get('http://localhost:8080/pappers/all')
                 .then(data => this.info = data.data)
         },
-        deleteData(id){
-            axios.delete("http://localhost:8080/pappers/delete/" + id)
+        async deleteData(id){
+            await axios.delete("http://localhost:8080/pappers/delete/" + id)
+            this.$router.go()
+
 
         }
     },
