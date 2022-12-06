@@ -1,16 +1,17 @@
 <template>
     <div class="form">
-    <form>
+        <form id="signup-form" v-on:submit.prevent="submit">
+
         <label>Iniciar Sesión</label>
         <div class="form__group field">
-            <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+            <input type="input" v-model.trim="email" class="form__field" placeholder="Name" name="name" id='name' required />
             <label for="name" class="form__label">Correo Electrónico</label>
         </div>
         <div class="form__group field">
-            <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+            <input type="password" v-model.trim="password" class="form__field" placeholder="Name" name="name" id='name' required />
             <label for="name" class="form__label">Contraseña</label>
         </div>
-        <button class="button-30" role="button" @click="ingresar">Ingresar</button>
+        <button class="button-30" role="button">Ingresar</button>
     </form>
     </div>
   
@@ -18,14 +19,27 @@
 
 <script>
 
-export default{
-    methods: {
-        ingresar() {
-            this.$router.push('/upload');
+
+import { required, email, minLength, maxLength } from '@vuelidate/validators'
+export default {
+    name: 'SignupForm',
+    data: function () {
+        return {
+            email: '',
+            password: ''
         }
     },
-
+    validations: {
+        email: { required, email },
+        password: { required, minLength: minLength(6), maxLength: maxLength(18) }
+    },
+    methods: {
+        submit() {
+            this.$router.push('/dashboard');
+        }
+    }
 }
+
 
 </script>
 

@@ -2,6 +2,8 @@
 
     <div class="navbar">
 <img class="navImg" src="../public/logo.png">
+<label class="cs" @click="upload()">Subir un Papper</label>
+<label class="cs" @click="">Eliminar un Papper</label>
 <label class="cs" @click="logout()">Cerrar Sesión</label>
     </div>
 
@@ -16,6 +18,10 @@ export default{
     methods:{
         logout(){
             this.$router.push('/');
+        },
+        upload(){
+            this.$router.push('/upload');
+  
         }
     },
 

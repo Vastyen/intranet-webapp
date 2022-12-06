@@ -34,8 +34,9 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth-next'
-  ],
+    '@nuxtjs/auth-next',
+    '@vuelidate/core'
+    ],
   axios:{
     baseURL: 'http://localhost:8080',
     proxy: true
