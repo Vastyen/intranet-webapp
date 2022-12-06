@@ -1,10 +1,14 @@
 package com.backend.backend.Services;
 
 import com.backend.backend.Entities.Attachment;
+import com.backend.backend.Entities.UsuarioEntity;
 import com.backend.backend.Repositories.AttachmentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
+
+import java.util.ArrayList;
 
 @Service
 public class AttachmentServiceImpl implements AttachmentService{
@@ -42,5 +46,16 @@ public class AttachmentServiceImpl implements AttachmentService{
                 .orElseThrow(
                         () -> new Exception("File not found with Id: " + fileId));
     }
+
+    @Autowired
+    public ArrayList<Attachment> listarTodos(){
+        return (ArrayList<Attachment>) attachmentRepository.findAll();
+    }
+
+    public void borrarPorId(String id){
+        attachmentRepository.deleteById(id);
+
+    }
+
 
 }

@@ -26,7 +26,7 @@ export default{
             const formData = new FormData();
             formData.append('file', this.Images);
             const headers = { 'Content-Type': 'multipart/form-data' };
-            axios.post('http://localhost:8080/upload', formData, { headers }).then((res) => {
+            axios.post('http://localhost:8080/pappers/upload', formData, { headers }).then((res) => {
                 res.data.files; 
                 res.status; 
             });
