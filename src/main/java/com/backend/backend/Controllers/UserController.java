@@ -1,8 +1,6 @@
 package com.backend.backend.Controllers;
-import com.backend.backend.Services.UsuarioService;
-import com.backend.backend.Repositories.UsuarioRepository;
-import com.backend.backend.Services.UsuarioService;
-import com.backend.backend.Entities.UsuarioEntity;
+import com.backend.backend.Services.UserService;
+import com.backend.backend.Entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,13 +11,13 @@ import java.util.ArrayList;
 @Controller
 @RequestMapping("/usuarios")
 @CrossOrigin("*")
-public class UsuarioController {
+public class UserController {
     @Autowired
-    UsuarioService usuarioService;
+    UserService userService;
 
     @GetMapping("/listar")
-    public ResponseEntity<ArrayList<UsuarioEntity>> listarTodos() {
-        ArrayList<UsuarioEntity> lista = usuarioService.listarTodos();
+    public ResponseEntity<ArrayList<User>> listarTodos() {
+        ArrayList<User> lista = userService.listarTodos();
         if (lista.isEmpty()) {
             return ResponseEntity.noContent().build();
         }
@@ -27,14 +25,14 @@ public class UsuarioController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<String> agregarLibro(@RequestBody UsuarioEntity usuarioEntity) {
-        usuarioService.agregarLibro(usuarioEntity);
+    public ResponseEntity<String> agregarLibro(@RequestBody User user) {
+        userService.agregarLibro(user);
         return ResponseEntity.ok("Ta bn");
     }
 
     @DeleteMapping("/borrarPorId/{id}")
     public ResponseEntity<String> deleteUser(@PathVariable Integer id) {
-        usuarioService.borrarPorId((id));
+        userService.borrarPorId((id));
         return ResponseEntity.ok("Borrado");
     }
 
