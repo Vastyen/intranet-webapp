@@ -1,14 +1,16 @@
 <template>
 <div class="home">
+        <NavBar />
 
-
-<NavBar></NavBar>
 <Form class="form"></Form>
   <Upload class="upload"></Upload>
     </div>
 </template>
 
-<script></script>
+<script>
+
+
+</script>
 
 <style>
 Body{
