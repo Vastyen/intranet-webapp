@@ -15,14 +15,11 @@ export default {
 </script>
 
 <style>
-*{
-  
+body{
     color: white;
     font-family: "JetBrains Mono", monospace;
     background-color: #213564;
   }
-
-
 
 #login{
   display: flex;
