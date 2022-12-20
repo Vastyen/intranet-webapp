@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 @Controller
@@ -36,6 +37,16 @@ public class UsuarioController {
     public ResponseEntity<String> deleteUser(@PathVariable Integer id) {
         usuarioService.borrarPorId((id));
         return ResponseEntity.ok("Borrado");
+    }
+    @PostMapping("/login")
+    public String login(@RequestBody UsuarioEntity user){
+        UsuarioEntity authUser = usuarioService.login(user.getEmail(),user.getPassword());
+        System.out.print(authUser);
+        if(Objects.nonNull(authUser)){
+            return "redirect:/user/perfil";
+        }else{
+            return "redirect:/user/login";
+        }
     }
 
 }
