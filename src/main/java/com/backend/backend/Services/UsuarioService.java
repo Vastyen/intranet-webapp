@@ -6,14 +6,22 @@ import org.springframework.stereotype.Service;
 
 import javax.swing.event.CaretListener;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
     @Autowired
     UsuarioRepository usuarioRepository;
 
+    // CRUD
+    // Read
     public ArrayList<UsuarioEntity> listarTodos(){
         return (ArrayList<UsuarioEntity>) usuarioRepository.findAll();
+    }
+
+    public Optional<UsuarioEntity> getById(Integer id){
+        Optional<UsuarioEntity> salida = usuarioRepository.findById(id);
+        return salida;
     }
 
     public UsuarioEntity agregarLibro(UsuarioEntity usuarioEntity){
