@@ -4,6 +4,7 @@ import com.backend.backend.Repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.swing.event.CaretListener;
 import java.util.ArrayList;
 
 @Service
@@ -22,6 +23,10 @@ public class UsuarioService {
     public void borrarPorId(Integer id){
         usuarioRepository.deleteById(id);
 
+    }
+    public UsuarioEntity login(String email, String password){
+        UsuarioEntity user = usuarioRepository.findByEmailAndPassword(email, password);
+        return user;
     }
 
 }
