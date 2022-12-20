@@ -1,6 +1,7 @@
 <template>
+    
     <div class="pappers">
-    <NavBar></NavBar>
+        <NavBar />
     <ul id="pappers">
         <li v-for="info in info" :key="info.message">
             {{ info}}
@@ -9,17 +10,14 @@
     </ul>
 </div>
 
-   
-
 </template>
-
 
 <script>
 
 import axios from 'axios';
 export default {
     
-    el: '#pappers',
+    name: '#pappers',
     data: function() {
         return {
             info: null
@@ -34,7 +32,6 @@ export default {
         async deleteData(id){
             await axios.delete("http://localhost:8080/pappers/delete/" + id)
             this.$router.go()
-
 
         }
     },
