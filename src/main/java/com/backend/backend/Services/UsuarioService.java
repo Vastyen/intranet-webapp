@@ -28,11 +28,10 @@ public class UsuarioService {
 
     public void borrarPorId(Integer id){
         usuarioRepository.deleteById(id);
-
     }
+
     public UsuarioEntity login(String email, String password){
         UsuarioEntity user = usuarioRepository.findByEmailAndPassword(email, password);
         return user;
     }
-
 }
