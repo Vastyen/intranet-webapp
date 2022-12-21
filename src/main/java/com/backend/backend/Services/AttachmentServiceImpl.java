@@ -1,7 +1,6 @@
 package com.backend.backend.Services;
 
 import com.backend.backend.Entities.Attachment;
-import com.backend.backend.Entities.UsuarioEntity;
 import com.backend.backend.Repositories.AttachmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

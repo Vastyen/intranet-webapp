@@ -1,52 +1,18 @@
 <template>
-
     <div class="navbar">
-<img class="navImg" src="../public/logo.png">
-<div id="labels">
-    <label class="cs" @click="dashboard()">Dashboard</label>
-    <label class="bar">|</label>
-<label class="cs" @click="upload()">Subir un Papper</label>
-<label class="bar">|</label>
-<label class="cs" @click="delet()">Mis Pappers</label>
-<label class="bar">|</label>
-<label class="cs" @click="logout()">Cerrar Sesión</label>
-</div>
-
+        <img class="navImg" src="../public/logo.png">
+        <div id="labels">
+            <router-link to="/dashboard" class="cs">Dashboard</router-link>
+            <label class="bar">|</label>
+            <router-link to="/upload" class="cs">Subir un Papper</router-link>
+            <label class="bar">|</label>
+            <router-link to="/pappers" class="cs">Mis Pappers</router-link>
+            <label class="bar">|</label>
+            <router-link to="/" class="cs">Cerrar Sesión</router-link>
+            <router-view/>
+        </div>
     </div>
-
-
 </template>
-
-
-<script>
-
-export default{
-
-    methods:{
-        dashboard() {
-            this.$router.push('/dashboard');
-        },
-        delet() {
-            this.$router.push('/pappers');
-        },
-        logout(){
-            this.$router.push('/');
-        },
-        upload(){
-            this.$router.push('/upload');
-  
-        }
-    },
-
-
-
-}
-
-
-</script>
-
-
-
 
 <style>
 
@@ -60,9 +26,7 @@ export default{
     padding: 3vh;
 }
 
-label{
-    margin: 1vh;
-}
+
 
 .cs:hover{
     color: rgb(224, 110, 10);
@@ -71,6 +35,9 @@ label{
 .cs{
     font-weight: bold;
     font-size: 1em;
+    text-decoration: none;
+    color: white;
+    margin-inline: 1vh;
 }
 
 .navbar{

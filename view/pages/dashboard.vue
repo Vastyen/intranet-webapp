@@ -1,11 +1,7 @@
 <template>
 
 <div class="dashboard">
-
-    <NavBar>
-        
-    </NavBar>
-
+<NavBar/>
 </div>
 
 

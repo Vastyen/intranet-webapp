@@ -3,6 +3,11 @@ Website using vuejs, springboot, vue.js and postgresql.
 
 ## Configuration
 
+### Install
+            git clone https://github.com/vastien/fingeso-vuejs-springboot-postgresql/
+            cd fingeso-vuejs-springboot-postgresql
+            cd view
+
 ### Dependencies
 
           npm i axios@0.21.1

@@ -21,7 +21,5 @@ public class UsuarioService {
 
     public void borrarPorId(Integer id){
         usuarioRepository.deleteById(id);
-
     }
-
 }

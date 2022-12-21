@@ -1,8 +1,6 @@
 package com.backend.backend.Controllers;
-import com.backend.backend.Services.UsuarioService;
-import com.backend.backend.Repositories.UsuarioRepository;
-import com.backend.backend.Services.UsuarioService;
 import com.backend.backend.Entities.UsuarioEntity;
+import com.backend.backend.Services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;

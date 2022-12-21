@@ -1,25 +1,30 @@
 <template>
+    
     <div class="pappers">
-    <NavBar></NavBar>
+        <NavBar />
     <ul id="pappers">
+        <label>Pappers</label>
         <li v-for="info in info" :key="info.message">
-            {{ info}}
-            <label @click="deleteData(info.id)">🗑️</label>
+           - {{ info.fileName}}
+           <div id="buttons">
+                <label class="trash" @click="deleteData(info.id)">Borrar 🗑️</label>
+                <label class="bar">|</label>
+                <label class="trash" @click="download(info.id)">Descargar 💾</label>
+           </div>
+           
+           
         </li>
     </ul>
 </div>
 
-   
-
 </template>
-
 
 <script>
 
 import axios from 'axios';
 export default {
     
-    el: '#pappers',
+    name: '#pappers',
     data: function() {
         return {
             info: null
@@ -34,8 +39,10 @@ export default {
         async deleteData(id){
             await axios.delete("http://localhost:8080/pappers/delete/" + id)
             this.$router.go()
-
-
+        }
+        ,
+     download(id){
+         window.location.replace("http://localhost:8080/pappers/download/" + id);
         }
     },
     created: function (){
@@ -48,8 +55,29 @@ export default {
 
 
 <style>
-Body {
+body {
     background-color: #213564;
     color: white;
 }
+.bar {
+    font-size: 1em;
+}
+.trash{
+    margin-top: -0.5vh;
+    margin-inline: 10vh;
+    font-size: 1em;
+}
+
+#buttons{
+    display: flex;
+}
+
+
+li{
+   width: 90%;
+   justify-content: space-between;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 5vh;
+    }
 </style>
