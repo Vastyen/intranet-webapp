@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.Optional;
 
 
 @Controller
@@ -27,6 +28,16 @@ public class UsuarioController {
         return ResponseEntity.ok(lista);
     }
 
+    @GetMapping("/get-by-id/{id}")
+    public ResponseEntity<UsuarioEntity> getById(@PathVariable("id") String id){
+        Integer idGenerado = Integer.parseInt(id);
+        Optional<UsuarioEntity> encontrado = usuarioService.getById(idGenerado);
+        if(encontrado.isPresent()){
+            return ResponseEntity.ok(encontrado.get());
+        }
+        return ResponseEntity.noContent().build();
+    }
+
     @PostMapping("/add")
     public ResponseEntity<String> agregarLibro(@RequestBody UsuarioEntity usuarioEntity) {
         usuarioService.agregarLibro(usuarioEntity);
@@ -38,15 +49,15 @@ public class UsuarioController {
         usuarioService.borrarPorId((id));
         return ResponseEntity.ok("Borrado");
     }
-    @PostMapping("/login")
-    public String login(@RequestBody UsuarioEntity user){
+    @GetMapping("/login")
+    public ResponseEntity<Integer> login(@RequestBody UsuarioEntity user){
         UsuarioEntity authUser = usuarioService.login(user.getEmail(),user.getPassword());
         System.out.print(authUser);
-        if(Objects.nonNull(authUser)){
-            return "redirect:/user/perfil";
-        }else{
-            return "redirect:/user/login";
+        if(authUser == null){
+            System.out.println("Usuario no encontrado");
+            return ResponseEntity.badRequest().body(-1);
         }
+        return ResponseEntity.ok(authUser.getId());
     }
 
 }

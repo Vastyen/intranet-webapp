@@ -7,7 +7,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Integer> {
-    default UsuarioEntity findByEmailAndPassword(String email, String password) {
-        return null;
-    }
+    UsuarioEntity findByEmailAndPassword(String email, String password);
 }
