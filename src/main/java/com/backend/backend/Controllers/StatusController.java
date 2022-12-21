@@ -10,14 +10,21 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 
 @Controller
-@RequestMapping("/estado")
+@RequestMapping("/status")
 @CrossOrigin("*")
 public class StatusController {
 
     @Autowired
     StatusService statusService;
 
-    @GetMapping("/listar")
+    @PostMapping("/status")
+    @ResponseBody
+    public ResponseEntity<String> generarEstado(Status status){
+        statusService.actualizarEstado(status);
+        return ResponseEntity.ok("Estado generado, mi pana");
+    }
+
+    @GetMapping("/status")
     public ResponseEntity<ArrayList<Status>> listarTodos() {
         ArrayList<Status> lista = statusService.listarTodos();
         if (lista.isEmpty()) {
@@ -26,15 +33,9 @@ public class StatusController {
         return ResponseEntity.ok(lista);
     }
 
-    @GetMapping("/listarPorID/{id}")
+    @GetMapping("/status/{id}")
     public Status listarPorID(@PathVariable Integer id){
         return statusService.listarPorID(id);
-    }
-
-    @PostMapping("/generate")
-    public ResponseEntity<String> generarEstado(Status status){
-        statusService.actualizarEstado(status);
-        return ResponseEntity.ok("Estado generado, mi pana");
     }
 
 }

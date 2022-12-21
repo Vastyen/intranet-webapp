@@ -3,6 +3,7 @@ package com.backend.backend.Entities;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity @Data
 public class Status {
@@ -11,7 +12,7 @@ public class Status {
     @Column(unique = true, nullable = false)
     Integer id_estado;
     String estado;
-    String fecha_estado;
+    Date fecha_estado;
 
     //Getters
     public Integer getId_estado() {
@@ -20,7 +21,7 @@ public class Status {
     public String getEstado() {
         return estado;
     }
-    public String getFecha_estado() {
+    public Date getFecha_estado() {
         return fecha_estado;
     }
 
@@ -28,7 +29,7 @@ public class Status {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-    public void setFecha_estado(String fecha_estado) {
+    public void setFecha_estado(Date fecha_estado) {
         this.fecha_estado = fecha_estado;
     }
 }
