@@ -26,4 +26,12 @@ public class RequestService {
     public void borrarPorId(Integer id) {
         requestRepository.deleteById(id);
     }
+
+    public ArrayList<Request> filtrarPorMes(String mes){
+        return requestRepository.findByMes(Integer.parseInt(mes));
+    }
+
+    public void graficoAnual(){
+
+    }
 }

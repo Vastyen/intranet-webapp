@@ -11,5 +11,7 @@ public class Request {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_usuario")
     UsuarioEntity id;
-    String peticion;
+    String peticion;  // Asunto
+    @Column(columnDefinition = "date")
+    String fecha;
 }
