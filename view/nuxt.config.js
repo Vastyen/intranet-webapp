@@ -36,6 +36,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth-next',
     '@vuelidate/core'
+
     ],
   axios:{
     baseURL: 'http://localhost:8080',

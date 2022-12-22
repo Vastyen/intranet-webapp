@@ -2,10 +2,14 @@
 
 <div class="dashboard">
 <NavBar/>
+
+    <Dashboard></Dashboard>
+
+
 </div>
 
 
-</template>
+</template> 
 
 <script>
 
