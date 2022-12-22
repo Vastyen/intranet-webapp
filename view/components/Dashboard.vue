@@ -2,15 +2,12 @@
 
   <div id="dashboard">
 
-    <label>¡Hola Bastián Escribano!</label>
-    
+    <label>Bienvenido</label>
+
   </div>
 
 </template>
 
 <script>
-
-
-
 
 </script>

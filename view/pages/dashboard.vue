@@ -3,13 +3,15 @@
 <div class="dashboard">
 <NavBar/>
 
-    <Dashboard></Dashboard>
+    <Dashboard>
+
+    </Dashboard>
 
 
 </div>
 
 
-</template> 
+</template>
 
 <script>
 
