@@ -15,7 +15,6 @@
 </template>
 
 <style>
-
 .bar{
     font-size: 1em;
 }
@@ -24,6 +23,7 @@
     display: flex;
     justify-content: space-between;
     padding: 3vh;
+    
 }
 
 
@@ -38,6 +38,7 @@
     text-decoration: none;
     color: white;
     margin-inline: 1vh;
+    transition: 0.1s;
 }
 
 .navbar{
