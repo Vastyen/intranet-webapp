@@ -1,7 +1,6 @@
 package com.backend.backend.Services;
 
 import com.backend.backend.Entities.Status;
-import com.backend.backend.Repositories.AttachmentRepository;
 import com.backend.backend.Repositories.StatusRepository;
 import com.backend.backend.Repositories.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
